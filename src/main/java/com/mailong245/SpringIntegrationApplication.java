@@ -13,6 +13,8 @@ import java.util.Scanner;
 public class SpringIntegrationApplication {
     private static final List<Class<?>> classes = new ArrayList<>();
 
+    private static final int CHOICE = 2;
+
     static {
         classes.add(0, BasicIntegrationConfig.class);
         classes.add(1, IntegrationFlowConfig.class);
@@ -21,7 +23,7 @@ public class SpringIntegrationApplication {
 
     public static void main(String... args) {
 
-        Class<?> clazz = classes.get(2);
+        Class<?> clazz = classes.get(CHOICE);
 
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(clazz);
         context.registerShutdownHook();
